@@ -1,0 +1,12 @@
+{
+  "name": "rogue-pinball-autobattler",
+  "version": "0.1.0",
+  "private": true,
+  "description": "No-dependency browser roguelite pinball autobattler.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

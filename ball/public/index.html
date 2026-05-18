@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>肉鸽弹球自走棋</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section id="joinPanel" class="join-panel">
+        <div class="brand">
+          <div class="brand-mark">◎</div>
+          <div>
+            <h1>肉鸽弹球自走棋</h1>
+            <p>双人直连房间，购买弹球、拿肉鸽强化，然后看它们在方形战场里互相撞碎。</p>
+          </div>
+        </div>
+        <div class="join-grid">
+          <label>
+            昵称
+            <input id="nameInput" maxlength="14" placeholder="玩家" autocomplete="off" />
+          </label>
+          <button id="createBtn" class="primary">创建房间</button>
+          <label>
+            房间码
+            <input id="roomInput" maxlength="8" placeholder="ABCDE" autocomplete="off" />
+          </label>
+          <button id="joinBtn">加入房间</button>
+        </div>
+      </section>
+
+      <main id="gamePanel" class="game-panel hidden">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">房间 <span id="roomCode">-----</span></div>
+            <h2 id="phaseTitle">准备阶段</h2>
+          </div>
+          <div class="players" id="players"></div>
+        </header>
+
+        <section class="arena-wrap">
+          <canvas id="arena" width="1040" height="620"></canvas>
+          <div class="battle-feed" id="battleFeed"></div>
+        </section>
+
+        <section class="control-grid">
+          <div class="panel roster-panel">
+            <div class="panel-head">
+              <h3>阵容</h3>
+              <div id="resources" class="resources"></div>
+            </div>
+            <div class="zones">
+              <div>
+                <div class="zone-title">上阵</div>
+                <div id="board" class="unit-list board-list"></div>
+              </div>
+              <div>
+                <div class="zone-title">备战区</div>
+                <div id="bench" class="unit-list"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel shop-panel">
+            <div class="panel-head">
+              <h3>商店</h3>
+              <div class="actions">
+                <button id="rerollBtn">刷新 2</button>
+                <button id="xpBtn">经验 4</button>
+                <button id="lockBtn">锁定</button>
+                <button id="readyBtn" class="primary">准备</button>
+              </div>
+            </div>
+            <div id="shop" class="shop"></div>
+          </div>
+
+          <div class="panel relic-panel">
+            <div class="panel-head">
+              <h3>强化</h3>
+            </div>
+            <div id="relicChoices" class="relic-choices"></div>
+            <div id="relics" class="relics"></div>
+          </div>
+        </section>
+      </main>
+
+      <div id="toast" class="toast hidden"></div>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

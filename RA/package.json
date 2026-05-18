@@ -1,0 +1,14 @@
+{
+  "name": "ra-online-cn",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RA 太阳神网页多人版，零运行依赖。",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}

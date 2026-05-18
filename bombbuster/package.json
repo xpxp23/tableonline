@@ -1,0 +1,13 @@
+{
+  "name": "bomb-buster-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bomb Buster inspired cooperative web game for LAN/cloud play.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

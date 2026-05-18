@@ -1,0 +1,970 @@
+{
+  "rooms": [
+    {
+      "code": "7XWVF",
+      "createdAt": 1778854826187,
+      "updatedAt": 1778854945370,
+      "players": [
+        {
+          "id": "3d7e644be58a8251",
+          "name": "xp",
+          "seat": 0,
+          "color": "#b45309",
+          "score": 10,
+          "tiles": [],
+          "suns": [
+            {
+              "value": 1,
+              "faceUp": false
+            },
+            {
+              "value": 6,
+              "faceUp": true
+            },
+            {
+              "value": 5,
+              "faceUp": true
+            },
+            {
+              "value": 2,
+              "faceUp": true
+            }
+          ],
+          "discarded": []
+        },
+        {
+          "id": "5a3ff8c64bf6551a",
+          "name": "test",
+          "seat": 1,
+          "color": "#0f766e",
+          "score": 10,
+          "tiles": [
+            {
+              "id": "652366211285",
+              "type": "pharaoh"
+            },
+            {
+              "id": "c959b377a8ac",
+              "type": "civilization",
+              "name": "书写"
+            },
+            {
+              "id": "fe93b761e992",
+              "type": "monument",
+              "name": "狮身人面像"
+            },
+            {
+              "id": "dd088752b8d3",
+              "type": "civilization",
+              "name": "宗教"
+            },
+            {
+              "id": "081fc31fcf0c",
+              "type": "flood"
+            },
+            {
+              "id": "d4fe02f01e12",
+              "type": "monument",
+              "name": "神龛"
+            }
+          ],
+          "suns": [
+            {
+              "value": 8,
+              "faceUp": true
+            },
+            {
+              "value": 7,
+              "faceUp": true
+            },
+            {
+              "value": 4,
+              "faceUp": true
+            },
+            {
+              "value": 9,
+              "faceUp": false
+            }
+          ],
+          "discarded": []
+        }
+      ],
+      "game": {
+        "phase": "main",
+        "epoch": 1,
+        "deck": [
+          {
+            "id": "73ee5c650987",
+            "type": "ra"
+          },
+          {
+            "id": "d3ee790ea681",
+            "type": "god"
+          },
+          {
+            "id": "c08c84372e9a",
+            "type": "flood"
+          },
+          {
+            "id": "54687820ad48",
+            "type": "monument",
+            "name": "神庙"
+          },
+          {
+            "id": "b67be7cb51f7",
+            "type": "pharaoh"
+          },
+          {
+            "id": "234d74d9b673",
+            "type": "monument",
+            "name": "方尖碑"
+          },
+          {
+            "id": "3c1dc283e001",
+            "type": "ra"
+          },
+          {
+            "id": "0262d0988074",
+            "type": "monument",
+            "name": "陵庙"
+          },
+          {
+            "id": "112495ae7746",
+            "type": "god"
+          },
+          {
+            "id": "341265567063",
+            "type": "pharaoh"
+          },
+          {
+            "id": "2b8b8ec9d15f",
+            "type": "pharaoh"
+          },
+          {
+            "id": "f76ac6b685ab",
+            "type": "monument",
+            "name": "雕像"
+          },
+          {
+            "id": "db65d9753b28",
+            "type": "gold"
+          },
+          {
+            "id": "91fb57d15746",
+            "type": "disaster",
+            "kind": "war"
+          },
+          {
+            "id": "8f441d453c34",
+            "type": "god"
+          },
+          {
+            "id": "2f60ed3c4d76",
+            "type": "flood"
+          },
+          {
+            "id": "91cd05c1c518",
+            "type": "nile"
+          },
+          {
+            "id": "6fea14b324e9",
+            "type": "ra"
+          },
+          {
+            "id": "f9ced3040cca",
+            "type": "civilization",
+            "name": "书写"
+          },
+          {
+            "id": "6fd4ad894eb5",
+            "type": "nile"
+          },
+          {
+            "id": "90e2766fc298",
+            "type": "flood"
+          },
+          {
+            "id": "efc34b534567",
+            "type": "nile"
+          },
+          {
+            "id": "5c1581a98782",
+            "type": "monument",
+            "name": "祭殿"
+          },
+          {
+            "id": "b622cbc4dfc5",
+            "type": "civilization",
+            "name": "宗教"
+          },
+          {
+            "id": "3d7b5db42166",
+            "type": "monument",
+            "name": "阶梯金字塔"
+          },
+          {
+            "id": "4e374c18bec0",
+            "type": "monument",
+            "name": "祭殿"
+          },
+          {
+            "id": "ca57d11d2b19",
+            "type": "nile"
+          },
+          {
+            "id": "b07029856e56",
+            "type": "civilization",
+            "name": "天文"
+          },
+          {
+            "id": "3892c56410a7",
+            "type": "civilization",
+            "name": "书写"
+          },
+          {
+            "id": "94a5a5d2475b",
+            "type": "ra"
+          },
+          {
+            "id": "7fd235549537",
+            "type": "flood"
+          },
+          {
+            "id": "64679929ca81",
+            "type": "monument",
+            "name": "神庙"
+          },
+          {
+            "id": "e68e2836a64e",
+            "type": "monument",
+            "name": "雕像"
+          },
+          {
+            "id": "e774e1bc27be",
+            "type": "nile"
+          },
+          {
+            "id": "63781c09f31a",
+            "type": "ra"
+          },
+          {
+            "id": "d7919ac371c0",
+            "type": "ra"
+          },
+          {
+            "id": "e5cee10041e3",
+            "type": "monument",
+            "name": "方尖碑"
+          },
+          {
+            "id": "ae610e6f1c71",
+            "type": "nile"
+          },
+          {
+            "id": "750f7ed2e8e6",
+            "type": "ra"
+          },
+          {
+            "id": "acf1b134edd3",
+            "type": "monument",
+            "name": "雕像"
+          },
+          {
+            "id": "bcec38cef074",
+            "type": "nile"
+          },
+          {
+            "id": "cbea99d980f2",
+            "type": "gold"
+          },
+          {
+            "id": "3c7399e8f6fb",
+            "type": "flood"
+          },
+          {
+            "id": "dae3bff48870",
+            "type": "nile"
+          },
+          {
+            "id": "77c06d4e7ab0",
+            "type": "flood"
+          },
+          {
+            "id": "17e77e3e6334",
+            "type": "flood"
+          },
+          {
+            "id": "7d7963da9876",
+            "type": "monument",
+            "name": "方尖碑"
+          },
+          {
+            "id": "bf06733bb834",
+            "type": "god"
+          },
+          {
+            "id": "9d1c68155022",
+            "type": "monument",
+            "name": "祭殿"
+          },
+          {
+            "id": "4c7f7e7b4e16",
+            "type": "pharaoh"
+          },
+          {
+            "id": "571e2e74bb42",
+            "type": "monument",
+            "name": "祭殿"
+          },
+          {
+            "id": "5adff72777a8",
+            "type": "ra"
+          },
+          {
+            "id": "da57451dea7f",
+            "type": "ra"
+          },
+          {
+            "id": "2eff67052091",
+            "type": "nile"
+          },
+          {
+            "id": "d52378833016",
+            "type": "pharaoh"
+          },
+          {
+            "id": "7085baf0e088",
+            "type": "nile"
+          },
+          {
+            "id": "40ba9765d6bd",
+            "type": "civilization",
+            "name": "农业"
+          },
+          {
+            "id": "8ee8d99ad226",
+            "type": "pharaoh"
+          },
+          {
+            "id": "e69169f3ee21",
+            "type": "god"
+          },
+          {
+            "id": "1b2f3fb91b28",
+            "type": "ra"
+          },
+          {
+            "id": "dfb02fff22ff",
+            "type": "pharaoh"
+          },
+          {
+            "id": "81b965968fa8",
+            "type": "civilization",
+            "name": "艺术"
+          },
+          {
+            "id": "07e09820e8cf",
+            "type": "monument",
+            "name": "阶梯金字塔"
+          },
+          {
+            "id": "05ab22a9d1a8",
+            "type": "ra"
+          },
+          {
+            "id": "d2b0e13fecf7",
+            "type": "nile"
+          },
+          {
+            "id": "30271848f2a1",
+            "type": "ra"
+          },
+          {
+            "id": "e8b3290c3f39",
+            "type": "ra"
+          },
+          {
+            "id": "2afc4953f3a4",
+            "type": "monument",
+            "name": "陵庙"
+          },
+          {
+            "id": "fb5c52593b00",
+            "type": "pharaoh"
+          },
+          {
+            "id": "7f1389c18e5a",
+            "type": "nile"
+          },
+          {
+            "id": "b02274f3f18b",
+            "type": "civilization",
+            "name": "农业"
+          },
+          {
+            "id": "fbea3cba24e8",
+            "type": "civilization",
+            "name": "天文"
+          },
+          {
+            "id": "556007a446b2",
+            "type": "pharaoh"
+          },
+          {
+            "id": "fd8ad83ad3e4",
+            "type": "nile"
+          },
+          {
+            "id": "98af526d72be",
+            "type": "civilization",
+            "name": "艺术"
+          },
+          {
+            "id": "a1e30232c695",
+            "type": "pharaoh"
+          },
+          {
+            "id": "20add42d0d99",
+            "type": "monument",
+            "name": "祭殿"
+          },
+          {
+            "id": "eafb7c9b5943",
+            "type": "ra"
+          },
+          {
+            "id": "9440f8c5edc5",
+            "type": "nile"
+          },
+          {
+            "id": "b3a5b8d79ff0",
+            "type": "disaster",
+            "kind": "war"
+          },
+          {
+            "id": "f1eef8818e17",
+            "type": "ra"
+          },
+          {
+            "id": "9aa41387aa0b",
+            "type": "gold"
+          },
+          {
+            "id": "274c261506c4",
+            "type": "ra"
+          },
+          {
+            "id": "abcfa14ff101",
+            "type": "ra"
+          },
+          {
+            "id": "5c16ad51128d",
+            "type": "monument",
+            "name": "狮身人面像"
+          },
+          {
+            "id": "b468c5692b08",
+            "type": "monument",
+            "name": "神庙"
+          },
+          {
+            "id": "bad23b98444d",
+            "type": "monument",
+            "name": "神龛"
+          },
+          {
+            "id": "61b8f1031d6c",
+            "type": "nile"
+          },
+          {
+            "id": "a34e57c119c9",
+            "type": "flood"
+          },
+          {
+            "id": "8a744868b8e9",
+            "type": "nile"
+          },
+          {
+            "id": "c52972f0ba42",
+            "type": "civilization",
+            "name": "天文"
+          },
+          {
+            "id": "c9c597fdeb92",
+            "type": "monument",
+            "name": "阶梯金字塔"
+          },
+          {
+            "id": "3eb25ebb4118",
+            "type": "disaster",
+            "kind": "war"
+          },
+          {
+            "id": "9354de901864",
+            "type": "disaster",
+            "kind": "drought"
+          },
+          {
+            "id": "d441deb7f05e",
+            "type": "ra"
+          },
+          {
+            "id": "619143f9b630",
+            "type": "civilization",
+            "name": "艺术"
+          },
+          {
+            "id": "592ee855c8d9",
+            "type": "pharaoh"
+          },
+          {
+            "id": "1da74846c704",
+            "type": "ra"
+          },
+          {
+            "id": "227d28f4c5d2",
+            "type": "nile"
+          },
+          {
+            "id": "285710fee2aa",
+            "type": "pharaoh"
+          },
+          {
+            "id": "e84dbfa8a494",
+            "type": "civilization",
+            "name": "农业"
+          },
+          {
+            "id": "366cbf065a46",
+            "type": "ra"
+          },
+          {
+            "id": "c975a5b465ba",
+            "type": "monument",
+            "name": "狮身人面像"
+          },
+          {
+            "id": "2ba54dd6805e",
+            "type": "pharaoh"
+          },
+          {
+            "id": "8a331f378994",
+            "type": "flood"
+          },
+          {
+            "id": "b3dc40394068",
+            "type": "flood"
+          },
+          {
+            "id": "6a48d39f9f53",
+            "type": "nile"
+          },
+          {
+            "id": "08ea9bc15b92",
+            "type": "nile"
+          },
+          {
+            "id": "5ff1f2a0c678",
+            "type": "gold"
+          },
+          {
+            "id": "03d827ea5325",
+            "type": "monument",
+            "name": "陵庙"
+          },
+          {
+            "id": "d62a63a81058",
+            "type": "monument",
+            "name": "阶梯金字塔"
+          },
+          {
+            "id": "b3205940a0ad",
+            "type": "nile"
+          },
+          {
+            "id": "b28f3ea8a665",
+            "type": "nile"
+          },
+          {
+            "id": "dbeeb2dfc70e",
+            "type": "disaster",
+            "kind": "war"
+          },
+          {
+            "id": "935f3678fa29",
+            "type": "ra"
+          },
+          {
+            "id": "a8e03dec9f2c",
+            "type": "disaster",
+            "kind": "drought"
+          },
+          {
+            "id": "ead98fa94651",
+            "type": "civilization",
+            "name": "书写"
+          },
+          {
+            "id": "0bd9f1b26843",
+            "type": "disaster",
+            "kind": "funeral"
+          },
+          {
+            "id": "af013da4b661",
+            "type": "pharaoh"
+          },
+          {
+            "id": "3e0f2befcc6d",
+            "type": "disaster",
+            "kind": "earthquake"
+          },
+          {
+            "id": "91dacae8dfdc",
+            "type": "ra"
+          },
+          {
+            "id": "48e859fda432",
+            "type": "monument",
+            "name": "方尖碑"
+          },
+          {
+            "id": "8dd3b7c6375e",
+            "type": "civilization",
+            "name": "农业"
+          },
+          {
+            "id": "50b4c476fe9a",
+            "type": "nile"
+          },
+          {
+            "id": "8b15866644c1",
+            "type": "flood"
+          },
+          {
+            "id": "df4663649e64",
+            "type": "monument",
+            "name": "神龛"
+          },
+          {
+            "id": "c344539ed76a",
+            "type": "pharaoh"
+          },
+          {
+            "id": "d3b5f87dd3b0",
+            "type": "monument",
+            "name": "狮身人面像"
+          },
+          {
+            "id": "5dbf9082702b",
+            "type": "monument",
+            "name": "神龛"
+          },
+          {
+            "id": "1db3c35dbf5c",
+            "type": "civilization",
+            "name": "艺术"
+          },
+          {
+            "id": "da6a737ccb51",
+            "type": "nile"
+          },
+          {
+            "id": "53f39ade2e5a",
+            "type": "ra"
+          },
+          {
+            "id": "7c0d1d625bf0",
+            "type": "pharaoh"
+          },
+          {
+            "id": "4cbe82b0c234",
+            "type": "civilization",
+            "name": "书写"
+          },
+          {
+            "id": "2cb457041259",
+            "type": "ra"
+          },
+          {
+            "id": "ab71122306a4",
+            "type": "pharaoh"
+          },
+          {
+            "id": "b88157551679",
+            "type": "pharaoh"
+          },
+          {
+            "id": "565c97f47242",
+            "type": "god"
+          },
+          {
+            "id": "d0b00d32a289",
+            "type": "pharaoh"
+          },
+          {
+            "id": "0318330be7e4",
+            "type": "pharaoh"
+          },
+          {
+            "id": "eb0f561fd8cc",
+            "type": "pharaoh"
+          },
+          {
+            "id": "cffc1ce1cc01",
+            "type": "god"
+          },
+          {
+            "id": "b85757844506",
+            "type": "ra"
+          },
+          {
+            "id": "38a8f1e2afec",
+            "type": "monument",
+            "name": "神庙"
+          },
+          {
+            "id": "3850583971ca",
+            "type": "monument",
+            "name": "陵庙"
+          },
+          {
+            "id": "b52b86e6273f",
+            "type": "gold"
+          },
+          {
+            "id": "9eedbb7d4773",
+            "type": "civilization",
+            "name": "艺术"
+          },
+          {
+            "id": "98e1a5038b7b",
+            "type": "monument",
+            "name": "神龛"
+          },
+          {
+            "id": "5400175fca30",
+            "type": "civilization",
+            "name": "宗教"
+          },
+          {
+            "id": "25af8c06a7b9",
+            "type": "pharaoh"
+          },
+          {
+            "id": "32035d0a1ceb",
+            "type": "ra"
+          },
+          {
+            "id": "d310d07da070",
+            "type": "ra"
+          },
+          {
+            "id": "a9b2111f44ef",
+            "type": "god"
+          },
+          {
+            "id": "82426070eab4",
+            "type": "civilization",
+            "name": "天文"
+          },
+          {
+            "id": "203a53de413e",
+            "type": "civilization",
+            "name": "宗教"
+          },
+          {
+            "id": "44409c16d9dd",
+            "type": "civilization",
+            "name": "天文"
+          },
+          {
+            "id": "df197f51f4b9",
+            "type": "ra"
+          },
+          {
+            "id": "6f8a9bfa496b",
+            "type": "nile"
+          },
+          {
+            "id": "947fe272a9a7",
+            "type": "monument",
+            "name": "雕像"
+          },
+          {
+            "id": "43b77bb39b67",
+            "type": "monument",
+            "name": "神庙"
+          },
+          {
+            "id": "9493dbb7ee96",
+            "type": "pharaoh"
+          },
+          {
+            "id": "02938898bc8d",
+            "type": "monument",
+            "name": "雕像"
+          },
+          {
+            "id": "57c2c4a7d865",
+            "type": "monument",
+            "name": "狮身人面像"
+          },
+          {
+            "id": "d738d99e6ed0",
+            "type": "pharaoh"
+          },
+          {
+            "id": "d9e10a1588b0",
+            "type": "monument",
+            "name": "方尖碑"
+          },
+          {
+            "id": "44bdfed7336d",
+            "type": "disaster",
+            "kind": "funeral"
+          },
+          {
+            "id": "38824acad112",
+            "type": "ra"
+          },
+          {
+            "id": "cdcb7b9b4a4b",
+            "type": "monument",
+            "name": "阶梯金字塔"
+          },
+          {
+            "id": "35e62a5b85e3",
+            "type": "monument",
+            "name": "陵庙"
+          },
+          {
+            "id": "6812f3628682",
+            "type": "civilization",
+            "name": "宗教"
+          },
+          {
+            "id": "98321c210c3e",
+            "type": "civilization",
+            "name": "农业"
+          },
+          {
+            "id": "c2fc3afdf874",
+            "type": "nile"
+          },
+          {
+            "id": "d578258bb95b",
+            "type": "disaster",
+            "kind": "earthquake"
+          }
+        ],
+        "bagCount": 173,
+        "auctionTrack": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "raCount": 1,
+        "raStartIndex": 4,
+        "raLimit": 6,
+        "centerSun": 3,
+        "currentPlayerSeat": 0,
+        "auction": null,
+        "pendingDisaster": null,
+        "pendingGodQueue": null,
+        "log": [
+          {
+            "id": "b1033733",
+            "at": 1778854847343,
+            "text": "游戏开始。2 人局，当前纪元 1。"
+          },
+          {
+            "id": "17e1a814",
+            "at": 1778854859153,
+            "text": "xp 抽到了 Ra 牌。"
+          },
+          {
+            "id": "9fd18cf7",
+            "at": 1778854859154,
+            "text": "xp 触发了拍卖。"
+          },
+          {
+            "id": "10119a5b",
+            "at": 1778854872754,
+            "text": "test 出价 8。"
+          },
+          {
+            "id": "f06d1634",
+            "at": 1778854877306,
+            "text": "xp 出价 9。"
+          },
+          {
+            "id": "5200b03d",
+            "at": 1778854877307,
+            "text": "xp 以 9 赢得拍卖，拿走了 0 块牌。"
+          },
+          {
+            "id": "3d59478d",
+            "at": 1778854910607,
+            "text": "test 将 法老 放入拍卖轨道。"
+          },
+          {
+            "id": "3129d84b",
+            "at": 1778854915070,
+            "text": "xp 将 书写 放入拍卖轨道。"
+          },
+          {
+            "id": "c61f8316",
+            "at": 1778854922367,
+            "text": "test 将 狮身人面像 放入拍卖轨道。"
+          },
+          {
+            "id": "bc55e485",
+            "at": 1778854925288,
+            "text": "xp 将 宗教 放入拍卖轨道。"
+          },
+          {
+            "id": "56944e58",
+            "at": 1778854927707,
+            "text": "test 将 洪水 放入拍卖轨道。"
+          },
+          {
+            "id": "db75043e",
+            "at": 1778854929732,
+            "text": "xp 将 神龛 放入拍卖轨道。"
+          },
+          {
+            "id": "57a3a0de",
+            "at": 1778854931249,
+            "text": "test 触发了拍卖。"
+          },
+          {
+            "id": "095dee27",
+            "at": 1778854943527,
+            "text": "xp 选择了放弃。"
+          },
+          {
+            "id": "f07d5fe0",
+            "at": 1778854945370,
+            "text": "test 出价 3。"
+          },
+          {
+            "id": "6cbc083e",
+            "at": 1778854945370,
+            "text": "test 以 3 赢得拍卖，拿走了 6 块牌。"
+          },
+          {
+            "id": "f23e0f3a",
+            "at": 1778854945370,
+            "text": "test 获得了 法老、书写、狮身人面像、宗教、洪水、神龛。"
+          }
+        ],
+        "gameOver": null
+      }
+    }
+  ]
+}

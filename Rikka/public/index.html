@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>六华 Online</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main id="app" class="app">
+      <section class="entry" data-view="entry">
+        <div class="brand">
+          <span class="brand-mark">六</span>
+          <div>
+            <h1>六华 Online</h1>
+            <p>中文网页多人版，适合云服务器或局域网部署。</p>
+          </div>
+        </div>
+        <div class="entry-grid">
+          <form class="panel entry-card" id="createForm">
+            <h2>创建房间</h2>
+            <label>
+              玩家名
+              <input name="name" maxlength="16" autocomplete="nickname" placeholder="输入你的名字">
+            </label>
+            <button type="submit">创建并进入</button>
+          </form>
+          <form class="panel entry-card" id="joinForm">
+            <h2>加入房间</h2>
+            <label>
+              房间码
+              <input name="code" maxlength="8" autocomplete="off" placeholder="例如 A7KQ">
+            </label>
+            <label>
+              玩家名
+              <input name="name" maxlength="16" autocomplete="nickname" placeholder="输入你的名字">
+            </label>
+            <button type="submit">加入</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="game hidden" data-view="game">
+        <header class="topbar">
+          <div>
+            <span class="eyebrow">房间</span>
+            <strong id="roomCode">----</strong>
+          </div>
+          <div>
+            <span class="eyebrow">阶段</span>
+            <strong id="phaseText">大厅</strong>
+          </div>
+          <div>
+            <span class="eyebrow">当前</span>
+            <strong id="turnText">等待开始</strong>
+          </div>
+          <div>
+            <span class="eyebrow">目标</span>
+            <strong id="targetText">10</strong>
+          </div>
+          <button id="copyLinkBtn" class="ghost" type="button">复制邀请</button>
+        </header>
+
+        <section class="board">
+          <aside class="panel players-panel">
+            <div class="panel-head">
+              <h2>玩家</h2>
+              <span id="playerCount">0/6</span>
+            </div>
+            <div id="players" class="players"></div>
+          </aside>
+
+          <section class="play-area">
+            <div id="lobbyPanel" class="panel lobby-panel hidden">
+              <div class="panel-head">
+                <h2>房间设置</h2>
+                <span>房主开始对局</span>
+              </div>
+              <div class="settings">
+                <label>
+                  目标分
+                  <input id="targetScore" type="number" min="6" max="60" step="1" value="12">
+                </label>
+                <label class="switch">
+                  <input id="optionalPatterns" type="checkbox" checked>
+                  <span>启用追加牌型</span>
+                </label>
+                <label class="switch">
+                  <input id="riichiRule" type="checkbox" checked>
+                  <span>启用立直</span>
+                </label>
+                <label class="switch">
+                  <input id="ronRule" type="checkbox" checked>
+                  <span>启用直击</span>
+                </label>
+              </div>
+              <div class="action-row">
+                <button id="saveOptionsBtn" type="button">保存设置</button>
+                <button id="readyBtn" type="button">准备</button>
+                <button id="startBtn" type="button">开始对局</button>
+              </div>
+            </div>
+
+            <div id="roundEndPanel" class="panel result-panel hidden">
+              <div>
+                <span class="eyebrow">本局结果</span>
+                <h2 id="resultTitle">本局结束</h2>
+                <p id="resultDetail"></p>
+              </div>
+              <button id="nextRoundBtn" type="button">下一局</button>
+              <button id="resetBtn" class="ghost" type="button">回到大厅</button>
+            </div>
+
+            <div id="ronPanel" class="panel ron-panel hidden">
+              <div>
+                <span class="eyebrow">直击窗口</span>
+                <h2 id="ronTitle">有人打出了可用牌</h2>
+                <p id="ronDetail"></p>
+              </div>
+              <div class="action-row">
+                <button id="claimRonBtn" type="button">直击和牌</button>
+                <button id="passRonBtn" class="ghost" type="button">跳过</button>
+              </div>
+            </div>
+
+            <div class="table">
+              <div class="zone market-zone">
+                <div class="zone-head">
+                  <div>
+                    <span class="eyebrow">桌面</span>
+                    <h2>选择一张场上牌</h2>
+                  </div>
+                  <span id="deckInfo"></span>
+                </div>
+                <div id="tableTiles" class="tiles market"></div>
+              </div>
+
+              <div class="zone discard-zone">
+                <div class="zone-head">
+                  <div>
+                    <span class="eyebrow">弃牌</span>
+                    <h2>最近弃牌</h2>
+                  </div>
+                </div>
+                <div id="discard" class="tiles mini-tiles"></div>
+              </div>
+            </div>
+
+            <div class="panel hand-panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">你的手牌</span>
+                  <h2 id="handHint">选择要弃出的牌</h2>
+                </div>
+                <div class="hand-actions">
+                  <button id="riichiBtn" class="ghost" type="button">立直</button>
+                  <button id="declareBtn" type="button">完成</button>
+                </div>
+              </div>
+              <div id="hand" class="tiles hand"></div>
+              <div id="patternBadges" class="badges"></div>
+            </div>
+          </section>
+
+          <aside class="panel rules-panel">
+            <div class="panel-head">
+              <h2>规则速览</h2>
+            </div>
+            <div id="rules" class="rules"></div>
+            <div class="log">
+              <h3>记录</h3>
+              <div id="log"></div>
+            </div>
+          </aside>
+        </section>
+      </section>
+
+      <div id="toast" class="toast hidden"></div>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

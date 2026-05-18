@@ -1,0 +1,14 @@
+{
+  "name": "the-gang-online",
+  "version": "1.0.0",
+  "private": true,
+  "description": "纸牌帮（The Gang）网页在线版，低依赖局域网房间游戏。",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}

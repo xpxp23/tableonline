@@ -1,0 +1,15 @@
+{
+  "name": "rikka-online",
+  "version": "1.0.0",
+  "private": true,
+  "description": "六华桌游网页版",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/rules.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

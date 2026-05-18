@@ -1,0 +1,14 @@
+{
+  "name": "lovecraft-letter-online",
+  "version": "1.0.0",
+  "private": true,
+  "description": "中文网页多人版洛夫克拉夫特情书规则实现",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
