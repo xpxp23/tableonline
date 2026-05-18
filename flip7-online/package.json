@@ -1,0 +1,13 @@
+{
+  "name": "flip-7-online",
+  "version": "1.0.0",
+  "private": true,
+  "description": "网页版联机桌游七连翻",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}

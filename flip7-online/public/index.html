@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>七连翻 Online</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section id="entry" class="entry">
+        <div class="brand">
+          <p>Flip 7</p>
+          <h1>七连翻</h1>
+        </div>
+        <div class="entry-panel">
+          <label>
+            昵称
+            <input id="nameInput" maxlength="16" autocomplete="nickname" placeholder="输入你的名字">
+          </label>
+          <div class="entry-actions">
+            <button id="createBtn" class="primary">创建房间</button>
+            <div class="join-row">
+              <input id="roomInput" maxlength="4" placeholder="房间码">
+              <button id="joinBtn">加入</button>
+            </div>
+          </div>
+          <p id="entryError" class="error"></p>
+        </div>
+      </section>
+
+      <section id="table" class="table hidden">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">房间 <button id="copyRoomBtn" class="code-button"></button></p>
+            <h2 id="phaseTitle">等待开始</h2>
+          </div>
+          <div class="top-actions">
+            <span id="connectionBadge" class="badge">连接中</span>
+            <button id="leaveBtn" class="ghost">换房间</button>
+            <button id="restartBtn" class="ghost hidden">重开</button>
+            <button id="startBtn" class="primary hidden">开始游戏</button>
+          </div>
+        </header>
+
+        <section class="status-strip">
+          <div>
+            <span>轮次</span>
+            <strong id="roundText">-</strong>
+          </div>
+          <div>
+            <span>当前玩家</span>
+            <strong id="activeText">-</strong>
+          </div>
+          <div>
+            <span>牌库</span>
+            <strong id="deckText">-</strong>
+          </div>
+          <div>
+            <span>目标分</span>
+            <strong id="goalText">200</strong>
+          </div>
+        </section>
+
+        <section id="pendingPanel" class="pending-panel hidden">
+          <div>
+            <p id="pendingTitle"></p>
+            <small id="pendingHelp"></small>
+          </div>
+          <div id="targetButtons" class="target-buttons"></div>
+        </section>
+
+        <section id="players" class="players"></section>
+
+        <section class="control-panel">
+          <div class="my-summary">
+            <span>你的本轮分</span>
+            <strong id="myRoundScore">0</strong>
+          </div>
+          <div class="turn-actions">
+            <button id="hitBtn" class="primary" disabled>翻牌</button>
+            <button id="stayBtn" disabled>停牌</button>
+          </div>
+          <p id="actionError" class="error"></p>
+        </section>
+
+        <section class="log-panel">
+          <h3>记录</h3>
+          <ol id="logList"></ol>
+        </section>
+      </section>
+    </main>
+
+    <section id="bustEffect" class="bust-effect hidden" aria-live="assertive" aria-atomic="true">
+      <div class="bust-effect__burst" aria-hidden="true"></div>
+      <div class="bust-effect__content">
+        <p class="bust-effect__kicker">重复数字</p>
+        <strong>爆掉！</strong>
+        <div class="bust-effect__cards" aria-hidden="true">
+          <span id="bustCardLeft">7</span>
+          <span id="bustCardRight">7</span>
+        </div>
+        <p id="bustMessage">本轮 0 分</p>
+      </div>
+    </section>
+
+    <template id="playerTemplate">
+      <article class="player-card">
+        <div class="player-head">
+          <div>
+            <h3></h3>
+            <p></p>
+          </div>
+          <strong></strong>
+        </div>
+        <div class="cards"></div>
+      </article>
+    </template>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
