@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在线桌游大厅</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+  :root{
+    --bg:#0a0e17;
+    --card-bg:rgba(15,22,40,0.85);
+    --border:rgba(80,120,255,0.15);
+    --accent:#4f8fff;
+    --accent2:#a855f7;
+    --accent3:#22d3ee;
+    --text:#e2e8f0;
+    --text-dim:#64748b;
+    --glow:rgba(79,143,255,0.25);
+  }
+
+  body{
+    font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+
+  /* animated bg */
+  .bg-grid{
+    position:fixed;inset:0;z-index:0;
+    background-image:
+      linear-gradient(rgba(79,143,255,0.03) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(79,143,255,0.03) 1px,transparent 1px);
+    background-size:60px 60px;
+    animation:gridMove 20s linear infinite;
+  }
+  @keyframes gridMove{0%{transform:translate(0,0)}100%{transform:translate(60px,60px)}}
+
+  .bg-orb{
+    position:fixed;border-radius:50%;filter:blur(100px);opacity:.18;z-index:0;pointer-events:none;
+  }
+  .orb1{width:500px;height:500px;background:var(--accent);top:-10%;left:-5%;animation:orbFloat 12s ease-in-out infinite alternate}
+  .orb2{width:400px;height:400px;background:var(--accent2);bottom:-10%;right:-5%;animation:orbFloat 15s ease-in-out infinite alternate-reverse}
+  .orb3{width:300px;height:300px;background:var(--accent3);top:40%;left:50%;animation:orbFloat 18s ease-in-out infinite alternate}
+  @keyframes orbFloat{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.1)}100%{transform:translate(-20px,20px) scale(0.95)}}
+
+  /* particles */
+  .particles{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .particle{
+    position:absolute;width:2px;height:2px;background:var(--accent);border-radius:50%;
+    animation:particleRise linear infinite;opacity:0;
+  }
+  @keyframes particleRise{
+    0%{transform:translateY(100vh) scale(0);opacity:0}
+    10%{opacity:1}
+    90%{opacity:1}
+    100%{transform:translateY(-10vh) scale(1);opacity:0}
+  }
+
+  /* header */
+  header{
+    position:relative;z-index:1;text-align:center;padding:80px 20px 40px;
+  }
+  header h1{
+    font-family:'Orbitron','Noto Sans SC',sans-serif;
+    font-size:clamp(2.2rem,5vw,3.8rem);
+    font-weight:900;
+    background:linear-gradient(135deg,var(--accent3),var(--accent),var(--accent2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    animation:titleGlow 3s ease-in-out infinite alternate;
+  }
+  @keyframes titleGlow{0%{filter:brightness(1) drop-shadow(0 0 10px var(--glow))}100%{filter:brightness(1.15) drop-shadow(0 0 25px var(--glow))}}
+
+  header p{
+    color:var(--text-dim);margin-top:12px;font-size:1.05rem;letter-spacing:2px;
+  }
+
+  .divider{
+    width:120px;height:2px;margin:30px auto;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  }
+
+  /* grid */
+  .game-grid{
+    position:relative;z-index:1;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:28px;
+    max-width:1200px;margin:0 auto;padding:0 24px 80px;
+  }
+
+  /* card */
+  .game-card{
+    position:relative;
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:32px 28px;
+    cursor:pointer;
+    transition:all .4s cubic-bezier(.25,.46,.45,.94);
+    overflow:hidden;
+    text-decoration:none;
+    display:flex;flex-direction:column;
+  }
+  .game-card::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg,transparent 40%,rgba(79,143,255,0.06) 100%);
+    transition:opacity .4s;opacity:0;
+  }
+  .game-card:hover{
+    transform:translateY(-8px) scale(1.02);
+    border-color:rgba(79,143,255,0.4);
+    box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 40px var(--glow);
+  }
+  .game-card:hover::before{opacity:1}
+
+  .card-icon{
+    font-size:3rem;margin-bottom:16px;
+    filter:drop-shadow(0 0 12px rgba(79,143,255,0.3));
+    transition:transform .4s;
+  }
+  .game-card:hover .card-icon{transform:scale(1.15) rotate(-3deg)}
+
+  .card-title{
+    font-size:1.35rem;font-weight:700;margin-bottom:8px;
+    background:linear-gradient(90deg,var(--text),var(--accent));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  .card-subtitle{
+    color:var(--text-dim);font-size:.88rem;line-height:1.6;margin-bottom:16px;
+  }
+  .card-tag{
+    display:inline-block;
+    padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:600;
+    letter-spacing:1px;
+  }
+  .tag-strategy{background:rgba(79,143,255,0.15);color:var(--accent);border:1px solid rgba(79,143,255,0.25)}
+  .tag-party{background:rgba(168,85,247,0.15);color:var(--accent2);border:1px solid rgba(168,85,247,0.25)}
+  .tag-card{background:rgba(34,211,238,0.15);color:var(--accent3);border:1px solid rgba(34,211,238,0.25)}
+
+  /* corner accent line */
+  .game-card::after{
+    content:'';position:absolute;top:0;left:0;
+    width:0;height:3px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    transition:width .5s cubic-bezier(.25,.46,.45,.94);
+    border-radius:16px 0 0 0;
+  }
+  .game-card:hover::after{width:100%}
+
+  /* footer */
+  footer{
+    position:relative;z-index:1;text-align:center;padding:40px 20px 30px;
+    color:var(--text-dim);font-size:.8rem;
+    border-top:1px solid var(--border);
+  }
+
+  /* responsive */
+  @media(max-width:700px){
+    header{padding:50px 16px 24px}
+    .game-grid{gap:18px;padding:0 16px 60px}
+    .game-card{padding:24px 20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+<div class="particles" id="particles"></div>
+
+<header>
+  <h1>Table Online</h1>
+  <p>在线桌游大厅 &mdash; 选择一个游戏开始畅玩</p>
+  <div class="divider"></div>
+</header>
+
+<div class="game-grid">
+
+  <a class="game-card" href="http://113.44.215.170:58880" target="_blank">
+    <div class="card-icon">🎱</div>
+    <div class="card-title">肉鸽弹球自走棋</div>
+    <div class="card-subtitle">Rogue Pinball Autobattler — 弹球碰撞与肉鸽策略的奇妙融合</div>
+    <span class="card-tag tag-strategy">策略</span>
+  </a>
+
+  <a class="game-card" href="http://113.44.215.170:58881" target="_blank">
+    <div class="card-icon">💣</div>
+    <div class="card-title">Bomb Buster 在线拆弹</div>
+    <div class="card-subtitle">合作拆弹 — 与队友协力破解炸弹危机</div>
+    <span class="card-tag tag-party">合作</span>
+  </a>
+
+  <a class="game-card" href="http://113.44.215.170:58882" target="_blank">
+    <div class="card-icon">💎</div>
+    <div class="card-title">璀璨宝石宝可梦版</div>
+    <div class="card-subtitle">Splendor Pok&eacute;mon — 收集宝石召唤宝可梦</div>
+    <span class="card-tag tag-strategy">策略</span>
+  </a>
+
+  <a class="game-card" href="http://113.44.215.170:58883" target="_blank">
+    <div class="card-icon">🃏</div>
+    <div class="card-title">七连翻 Online</div>
+    <div class="card-subtitle">Flip 7 — 翻牌冒险，贪心还是收手？</div>
+    <span class="card-tag tag-card">卡牌</span>
+  </a>
+
+  <a class="game-card" href="http://113.44.215.170:58884" target="_blank">
+    <div class="card-icon">🖐️</div>
+    <div class="card-title">Got Five 在线版</div>
+    <div class="card-subtitle">凑五 — 轻松有趣的数字凑五游戏</div>
+    <span class="card-tag tag-party">派对</span>
+  </a>
+
+  <a class="game-card" href="http://113.44.215.170:58885" target="_blank">
+    <div class="card-icon">🐙</div>
+    <div class="card-title">洛夫克拉夫特情书</div>
+    <div class="card-subtitle">Lovecraft Letter — 克苏鲁主题情书推理</div>
+    <span class="card-tag tag-card">卡牌</span>
+  </a>
+
+  <a class="game-card" href="http://113.44.215.170:58886" target="_blank">
+    <div class="card-icon">☀️</div>
+    <div class="card-title">RA 太阳神</div>
+    <div class="card-subtitle">RA — 史诗级拍卖竞标桌游</div>
+    <span class="card-tag tag-strategy">策略</span>
+  </a>
+
+  <a class="game-card" href="http://113.44.215.170:58887" target="_blank">
+    <div class="card-icon">🌸</div>
+    <div class="card-title">六华 Online</div>
+    <div class="card-subtitle">Rikka — 花之数的策略博弈</div>
+    <span class="card-tag tag-strategy">策略</span>
+  </a>
+
+  <a class="game-card" href="http://113.44.215.170:58889" target="_blank">
+    <div class="card-icon">🤠</div>
+    <div class="card-title">纸牌帮在线版</div>
+    <div class="card-subtitle">The Gang — 西部牛仔合作纸牌冒险</div>
+    <span class="card-tag tag-card">合作</span>
+  </a>
+
+</div>
+
+<footer>
+  Table Online &copy; 2026 &mdash; Powered by Node.js
+</footer>
+
+<script>
+// Generate particles
+const pc=document.getElementById('particles');
+for(let i=0;i<40;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDuration=(6+Math.random()*10)+'s';
+  p.style.animationDelay=Math.random()*8+'s';
+  p.style.width=p.style.height=(1+Math.random()*2)+'px';
+  const colors=['#4f8fff','#a855f7','#22d3ee'];
+  p.style.background=colors[Math.floor(Math.random()*3)];
+  pc.appendChild(p);
+}
+</script>
+</body>
+</html>
